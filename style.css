@@ -1,0 +1,43 @@
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Add vertical centering */
+  background-color: #5bbcf5;
+  height: 70px;
+}
+
+.navbar button {
+  background-color: gray;
+  color: black;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  border-radius: 7px;
+  height: 50px;
+  transition: background-color 0.3s ease;
+  margin-right: 10px; /* Add spacing between buttons */
+}
+
+/* Change background color of the tab button on hover */
+.navbar button:hover {
+  background-color: #0cfab3;
+}
+
+/* Set the active tab button */
+.navbar button.active {
+  background-color: #0471d6;
+}
+
+/* Style the tab content */
+.tabcontent {
+  display: none;
+  padding: 6px 12px;
+  border: 1px solid #ccc;
+  border-top: none;
+}
+
+#homesitename {
+  font-family: "Artifika", sans-serif;
+}
+

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Always Apple FTD - Home</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <style>
+    /* CSS for the Home page */
+    #home {
+      text-align: center;
+    }
+
+    #home p {
+      color: blue;
+      font-size: 50px;
+      font-family: 'Mukta Mahee', sans-serif;
+    }
+
+    #home h1 {
+      font-family: 'Arima', sans-serif;
+      font-size: 35px;
+    }
+
+    #software h1, #software h2 {
+      font-family: 'PT Sans Caption', sans-serif;
+    }
+
+    .button {
+      display: inline-block;
+      padding: 10px 40px;
+      background-color: #2a96fa;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 16px;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .button:hover {
+      background-color: #0d69bf;
+    }
+
+    .spacer {
+      height: 40px;
+    }
+  </style>
+  <link rel="icon" type="image/png" href="favicon.png">
+</head>
+<body>
+  <!-- Navigation bar -->
+  <!-- Navigation bar -->
+  <div class="navbar">
+    <button class="tablinks" onclick="navigateToPage('index.html')">Home</button>
+    <button class="tablinks" onclick="navigateToPage('news.html')">News</button>
+    <button class="tablinks" onclick="navigateToPage('web_blog.html')">Web Blog</button>
+    <button class="tablinks" onclick="navigateToPage('helpful_hacks.html')">Helpful Hacks</button>
+    <button class="tablinks" onclick="navigateToPage('downloads.html')">Downloads</button>
+    <button class="tablinks" onclick="navigateToPage('about.html')">About</button>
+  </div>
+
+  <script>
+  function navigateToPage(pageUrl) {
+    window.location = pageUrl;
+  }
+  </script>
+
+  <!-- Home page -->
+  <div id="home">
+    <h1 id="homesitename">Always Apple FTD</h1>
+    <p>Welcome to my site!</p>
+    
+    <!-- Software section -->
+    <div id="software">
+      <h1>SHSH Saver v1.0</h1>
+      <h2>My new app saves the SHSH Blobs on A9 to A11 devices.</h2>
+      <h2>SHSH Blobs are very useful for downgrading the iOS Version of your device.</h2>
+      <h2>Fun Fact: If you save your current blobs now, then when the iOS version </h2>
+      <h2>is considered obsolete, you can roll back to your old firmware!</h2>
+      <a href="software/SHSH_Saver.html" class="button">Learn more!</a>
+      <!-- Spacer -->
+      <div class="spacer"></div>
+      <h1>Wipera1n v1.2</h1>
+      <h2>Version 1.2 now allows users to enter full iOS versions in the Ask iOS Version pop-up.</h2>
+      <h2>It also includes the new "Get Help" button,</h2>
+      <h2>which allows users to quickly access the info page for Wipera1n.</h2>
+      <a href="software/Wipera1n.html" class="button">Check it out!</a>
+      <!-- Spacer -->
+      <div class="spacer"></div>
+    </div>
+    <h3>My latest YouTube Video:</h3>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/__YAT5GoJ0I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+  </div>
+</body>
+</html>
