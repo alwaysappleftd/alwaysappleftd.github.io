@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Apple FTD - Firmra1n</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #5bbcf5;
+            height: 70px;
+        }
+        .navbar button {
+            background-color: gray;
+            color: black;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            border-radius: 7px;
+            height: 50px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        .navbar button:hover {
+            background-color: #0cfab3;
+        }
+        /* .navbar button.active {
+            background-color: #0471d6;
+        } */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        /* Style the links within the text */
+        .content-link {
+            color: blue; /* Blue color for the links */
+            font-family: Arial;
+            //text-decoration: underline; /* Underline the links */
+        }
+        .clickable-block {
+            display: block;
+            text-decoration: none; /* Remove underline from all the links inside */
+        }
+        .clickable-block:hover {
+            background-color: #f3f4f6; /* Slight background highlight on hover */
+        }
+        .hover-shadow:hover {
+            background-color: #f3f4f6; /* Slightly grayer background on hover */
+        }
+        .spacer1 {
+            height: 20px;
+        }
+        .spacer2 {
+            height: 7px;
+        }
+        .spacer3 {
+            height: 60px;
+        }
+        .spacer4 {
+            height: 30px;
+        }
+        body {
+          text-align: center;
+          height: 100vh;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        h1 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 60px;
+    }
+        h2 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 20px;
+    }
+        h3 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 10px;
+    }
+        h4 {
+         text-align: center;
+         font-size: 10px;
+         font-family: Tahoma;
+    }
+        p {
+         text-align: center;
+    }
+        a {
+          color: blue;
+    }
+        #shshsaver_page a {
+          color: blue;
+    }
+        #new_a a {
+          color: white;
+    }
+
+        .spacer {
+          height: 50px;
+        }
+
+        .spacer p {
+          font-size: 14px; /* Adjust the font size as needed */
+        }
+
+        .button {
+          display: inline-block;
+          padding: 10px 60px;
+          background-color: #2a96fa;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-family:  Malayalam MN;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+          background-color: #0d69bf; /* Updated hover color */
+        }
+        .button2 {
+          display: inline-block;
+          padding: 10px 40px;
+          background-color: #e3653b;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .button2:hover {
+          background-color: #a33612; /* Updated hover color */
+        }
+        /* Styles for the expand button */
+        #expandButton {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            width: 100px; /* Set a fixed width and height */
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Framed tab buttons with specified styles -->
+        <a href="index.html" class="no-underline">
+            <button class="active">Home</button>
+        </a>
+        <a href="news.html" class="no-underline">
+            <button>News</button>
+        </a>
+        <a href="web_blog.html" class="no-underline">
+            <button>Web Blog</button>
+        </a>
+        <a href="helpful_hacks.html" class="no-underline">
+            <button>Helpful Hacks</button>
+        </a>
+        <a href="downloads.html" class="no-underline">
+            <button>Downloads</button>
+        </a>
+        <a href="about.html" class="no-underline">
+            <button>About</button>
+        </a>
+    </div>
+
+    <!-- SHSH Saver page -->
+    <div id="shshsaver_page">
+        
+        <div class="spacer3"></div>
+        <h1 class="text-4xl font-bold">Presenting, Firmra1n!</h1>
+        <div class="spacer4"></div>
+    <h2 class="text-2xl">This a free utility for restoring A8 to A11 devices with SHSH Blobs.</h2>
+    <h2 class="text-2xl">This includes the iPhone 6 to X. You can see the full list in the Supported Devices section.</h2>
+    <div class="spacer4"></div>
+    <h2></h2>
+    <img src="firmra1n_image.png" alt="SHSH Saver Image" width="800" height="500">
+            <div class="spacer3"></div>
+    <p class="mt-10 text-3xl font-bold">Supported devices</p>
+            <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">iPhone 6</h4>
+    <h4 class="mt-1 text-lg">iPhone 6 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone 6s</h4>
+    <h4 class="mt-1 text-lg">iPhone 6s Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone SE (1st generation)</h4>
+    <h4 class="mt-1 text-lg">iPhone 7</h4>
+    <h4 class="mt-1 text-lg">iPhone 7 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone 8</h4>
+    <h4 class="mt-1 text-lg">iPhone 8 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone X</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 12.9-inch (2015)</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 9.7-inch (2016)</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 10.5-inch 1st generation</h4>
+    <h4 class="mt-1 text-lg">iPod touch 7th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 5th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 6th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 7th generation</h4>
+    <h4 class="mt-1 text-lg">NOTE: The tool does not support any devices that aren't checkm8-compatible.</h4>
+    <h4 class="mt-1 text-lg">The method that is used in this software does not support any non-checkm8 devices.</h4>
+    <!-- Spacer -->
+    <div class="spacer1"></div>
+    <h2 class="mt-10 text-3xl font-bold">How to download Firmra1n</h2>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">Open the link below to download the latest version.</h4>
+    <h4 class="mt-1 text-lg">Once you open the site, click on the blue download button to download.</h4>
+    <div class="spacer4"></div>
+    <div id="new_a">
+        <a href="https://www.mediafire.com/file/p67xoize0iem4li/Firmra1n_v1.0_Beta.zip/file" class="button">Download Firmra1n v1.0 Beta</a>
+    </div>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">NOTE: If you see the message that the app cannot be opened because it's </h4>
+    <h4 class="mt-1 text-lg">from an unidentified developer, then just Right-click on the app file and select open. </h4>
+    <h4 class="mt-1 text-lg">This will allow you to open the bypass the unidentified developer message and open the app.</h4>
+<!--    <h4 class="mt-1 text-lg">If the app freezes the first time you open it, </h4>-->
+<!--    <h4 class="mt-1 text-lg">then just right-click on the SHSH Saver icon in the dock and select Force Quit.</h4>-->
+<!--    <h4 class="mt-1 text-lg">This will quit the app. You can reopen it and it shouldn't freeze this time.</h4>-->
+    <!-- Spacer -->
+    <div class="spacer"></div>
+    <h2 class="mt-10 text-3xl font-bold">How to use Firmra1n</h2>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">VERY IMPORTANT! Before you continue, it is very important for you to know about the SEP issues.</h4>
+    <h4 class="mt-1 text-lg">SEP is a file in IPSW files. Certain SEP are not compatible, meaning that a downgrade to that version </h4>
+    <h4 class="mt-1 text-lg">on that device will completely brick your device, rendering it unusable unless you restore to the latest iOS.</h4>
+    <h4 class="mt-1 text-lg">Please read <a href="https://idevicecentral.com/ios-downgrade/futurerestore-ios-downgrade-sep-and-baseband-compatibility-chart/">This Page</a> to know which versions are compatible with what devices.</h4>
+    <h4 class="mt-1 text-lg">Some examples are, A9 and A10 devices can only be restored to versions 14.0 and up,</h4>
+    <h4 class="mt-1 text-lg">and A8 and A7 devices can only be restored to iOS versions 11.3 and up.</h4>
+    <h2 class="mt-10 text-3xl font-bold">How to use Firmra1n (continued)</h2>
+    <h4 class="mt-1 text-lg">[1] Open up the app that you downloaded from here.</h4>
+    <h4 class="mt-1 text-lg">If you encounter the "Untrusted Developer" message, then follow the steps above to fix that issue.</h4>
+    <h4 class="mt-1 text-lg">Any further launching issues you should contact me about.</h4>
+    <h4 class="mt-1 text-lg">[2] Enter DFU Mode on your device. There are various ways of doing this, depending on your device.</h4>
+    <h4 class="mt-1 text-lg">I would recommend looking up "How to Enter DFU Mode on " and then your device model.</h4>
+    <h4 class="mt-1 text-lg">Example might be "How to Enter DFU Mode on iPhone 7 Plus".</h4>
+    <h4 class="mt-1 text-lg">[3] Click on the "Select Blob File" button.</h4>
+    <h4 class="mt-1 text-lg">It will open a file selection menu where you can select your SHSH blob file.</h4>
+    <h4 class="mt-1 text-lg">NOTE: You can only restore to blobs that have been saved for your device.</h4>
+    <h4 class="mt-1 text-lg">If they have been saved by the TSS Saver site or my SHSH Saver app, then they can be used fine with your device.</h4>
+    <h4 class="mt-1 text-lg">Once selected, press the "OK" button.</h4>
+    <h4 class="mt-1 text-lg">[4] Click on the "Select IPSW File" button.</h4>
+    <h4 class="mt-1 text-lg">NOTE: You must know the iOS version of your device in order to continue!</h4>
+    <h4 class="mt-1 text-lg">In most cases you can connect it to your Mac and read the version, or check in Settings.</h4>
+    <h4 class="mt-1 text-lg">But if you bought the device and it's passcode locked,</h4>
+    <h4 class="mt-1 text-lg">then I highly recommend you looking into <a href="Wipera1n.html">Wipera1n</a>, a free tool for wiping iDevices without losing the iOS version.</h4>
+    <h4 class="mt-1 text-lg">This works the same way, but without you needing to know the exact version.</h4>
+    <h4 class="mt-1 text-lg">You only have to put a close version, like 13.0 on a 13.7 device.</h4>
+    <h4 class="mt-1 text-lg">If you don't know the iOS version, then you can take a rough guess on the version.</h4>
+    <h4 class="mt-1 text-lg">The only other option if you really want to use Firmra1n is if you brute force the iOS version.</h4>
+    <h4 class="mt-1 text-lg">This is most times not possible, as it requires an enormous amount of disk space and is super time consuming.</h4>
+    <h4 class="mt-1 text-lg">You would start by figuring out the main version, like 11, or 14.</h4>
+    <h4 class="mt-1 text-lg">Then, you would download every IPSW for that version from <a href="https://ipsw.me">IPSW.me</a>, then try every firmware with your blobs.</h4>
+    <h4 class="mt-1 text-lg">I've done this before, and it works fine.</h4>
+    <h4 class="mt-1 text-lg">But I definitely don't recommend it.</h4>
+    <h4 class="mt-1 text-lg">Once your corresponding IPSW has been selected, then you can continue with the next step.</h4>
+    <h4 class="mt-1 text-lg">[5] Click on the "Enter PwnDFU Mode" button. This may take a second to complete.</h4>
+    <h4 class="mt-1 text-lg">You will see a pop-up when it's done, then press OK and move on to the last step.</h4>
+    <h4 class="mt-1 text-lg">[6] Click the "Start Restore!" button.</h4>
+    <h4 class="mt-1 text-lg">You will have to agree to all the pop-ups, then in about a minute,</h4>
+    <h4 class="mt-1 text-lg">the device should light up with the red screen.</h4>
+    <h4 class="mt-1 text-lg">You may also get the "iBSS Failed to send" error.</h4>
+    <h4 class="mt-1 text-lg">Do not worry, as the normal fix for this is to re-run the restore again.</h4>
+    <h4 class="mt-1 text-lg">The device should light up red the next time.</h4>
+    <h4 class="mt-1 text-lg">If the device does not light up at all, then there was an error while booting the device.</h4>
+    <h4 class="mt-1 text-lg">Please contact me with your issue and I will try to help you.</h4>
+    <h4 class="mt-1 text-lg">The device will go from red, to green, then the Apple logo,</h4>
+    <h4 class="mt-1 text-lg">then you will see some verbose text, and finally, the restore bar will appear.</h4>
+    <h4 class="mt-1 text-lg">Please be patient. The restore will complete, then the device will reboot.</h4>
+    <h4 class="mt-1 text-lg">Enjoy using restored device! Remember about the SEP issues, which is very important to keep in mind while using this tool.</h4>
+    <h4 class="mt-1 text-lg">If you want to learn more about SHSH Saver, then please visit the <a href="SHSH_Saver.html">SHSH Saver Page</a>.</h4>
+    <h3 class="mt-7 text-xl font-bold">Hope you enjoy using my software!</h3>
+    <!-- Spacer -->
+    <div class="spacer"></div>
+    <h2 class="mt-5 text-3xl font-bold">Need help?</h2>
+    <h3 class="mt-7 text-xl font-bold">I'm here to help if you need it.</h3>
+    <h3 class="mt-3 text-xl font-bold">I try my best to make Firmra1n user-friendly and fix any bugs </p>
+    <p class="mt-3 text-xl font-bold">but feel free to report any problems to me.</p>
+    <div class="spacer4"></div>
+    <div id="new_a">
+        <a href="mailto:alwaysappleftd@icloud.com?subject=Issue%20with%20Firmra1n" class="button2">Contact Always Apple FTD</a>
+    </div>
+   <!-- Spacer -->
+    <div class="spacer"></div>
+  </div>
+    <p>Website made by Always Apple FTD. Please do not copy any part of this website.</p>
+    
+</body>
+</html>
