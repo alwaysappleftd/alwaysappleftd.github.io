@@ -1,163 +1,272 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Always Apple FTD - SHSH Saver</title>
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <style>
-    /* CSS for the SHSH Saver page */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Apple FTD - SHSH Saver</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #5bbcf5;
+            height: 70px;
+        }
+        .navbar button {
+            background-color: gray;
+            color: black;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            border-radius: 7px;
+            height: 50px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        .navbar button:hover {
+            background-color: #0cfab3;
+        }
+        /* .navbar button.active {
+            background-color: #0471d6;
+        } */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        /* Style the links within the text */
+        .content-link {
+            color: blue; /* Blue color for the links */
+            font-family: Arial;
+            //text-decoration: underline; /* Underline the links */
+        }
+        .clickable-block {
+            display: block;
+            text-decoration: none; /* Remove underline from all the links inside */
+        }
+        .clickable-block:hover {
+            background-color: #f3f4f6; /* Slight background highlight on hover */
+        }
+        .hover-shadow:hover {
+            background-color: #f3f4f6; /* Slightly grayer background on hover */
+        }
+        .spacer1 {
+            height: 20px;
+        }
+        .spacer2 {
+            height: 7px;
+        }
+        .spacer3 {
+            height: 60px;
+        }
+        .spacer4 {
+            height: 30px;
+        }
+        body {
+          text-align: center;
+          height: 100vh;
+        }
 
-    body {
-      text-align: center;
-      height: 100vh;
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        h1 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 60px;
+    }
+        h2 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 20px;
+    }
+        h3 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 10px;
+    }
+        h4 {
+         text-align: center;
+         font-size: 10px;
+         font-family: Tahoma;
+    }
+        p {
+         text-align: center;
     }
 
-    img {
-      display: block;
-      margin: 0 auto;
-    }
+        .spacer {
+          height: 50px;
+        }
 
-    h1 {
-     text-align: center;
-     font-family: PT Sans Caption;
-}
-    h2 {
-     text-align: center;
-     font-family: PT Sans Caption;
-     font-size: 10;
-}
-    h3 {
-     text-align: center;
-     font-family: PT Sans Caption;
-     font-size: 10;
-}
-    h4 {
-     text-align: center;
-     font-size: 10;
-     font-family: Tahoma;
-}
-    p {
-     text-align: center;
-}
+        .spacer p {
+          font-size: 14px; /* Adjust the font size as needed */
+        }
 
-    .spacer {
-      height: 50px;
-    }
+        .button {
+          display: inline-block;
+          padding: 10px 60px;
+          background-color: #2a96fa;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-family:  Malayalam MN;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
 
-    .spacer p {
-      font-size: 14px; /* Adjust the font size as needed */
-    }
+        .button:hover {
+          background-color: #0d69bf; /* Updated hover color */
+        }
+        .button2 {
+          display: inline-block;
+          padding: 10px 40px;
+          background-color: #e3653b;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
 
-    .button {
-      display: inline-block;
-      padding: 10px 60px;
-      background-color: #2a96fa;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-family:  Malayalam MN;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .button:hover {
-      background-color: #0d69bf; /* Updated hover color */
-    }
-    .button2 {
-      display: inline-block;
-      padding: 10px 40px;
-      background-color: #e3653b;
-      color: white;
-      text-decoration: none;
-      border-radius: 8px;
-      font-size: 16px;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .button2:hover {
-      background-color: #a33612; /* Updated hover color */
-    }
-  </style>
+        .button2:hover {
+          background-color: #a33612; /* Updated hover color */
+        }
+        /* Styles for the expand button */
+        #expandButton {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            width: 100px; /* Set a fixed width and height */
+            height: 100px;
+        }
+    </style>
 </head>
-<body>
-  <!-- Navigation bar -->
-  <div class="navbar">
-    <button class="tablinks" onclick="navigateToPage('index.html')">Home</button>
-    <button class="tablinks" onclick="navigateToPage('news.html')">News</button>
-    <button class="tablinks" onclick="navigateToPage('web_blog.html')">Web Blog</button>
-    <button class="tablinks" onclick="navigateToPage('helpful_hacks.html')">Helpful Hacks</button>
-    <button class="tablinks" onclick="navigateToPage('downloads.html')">Downloads</button>
-    <button class="tablinks" onclick="navigateToPage('about.html')">About</button>
-  </div>
 
-  <script>
-  function navigateToPage(pageUrl) {
-    window.location = pageUrl;
-  }
-  </script>
+<body class="font-inter bg-white">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Framed tab buttons with specified styles -->
+        <a href="index.html" class="no-underline">
+            <button class="active">Home</button>
+        </a>
+        <a href="news.html" class="no-underline">
+            <button>News</button>
+        </a>
+        <a href="web_blog.html" class="no-underline">
+            <button>Web Blog</button>
+        </a>
+        <a href="helpful_hacks.html" class="no-underline">
+            <button>Helpful Hacks</button>
+        </a>
+        <a href="downloads.html" class="no-underline">
+            <button>Downloads</button>
+        </a>
+        <a href="about.html" class="no-underline">
+            <button>About</button>
+        </a>
+    </div>
 
     <!-- SHSH Saver page -->
     <div id="shshsaver_page">
-    <h1>Presenting, SHSH Saver!</h1>
-    <h2>This a free utility for saving the SHSH Blobs on A9 to A11 devices.</h2>
-    <h2>This includes the iPhone 6s to X. You can see the full list in the Supported Devices section.</h2>
+        
+        <div class="spacer3"></div>
+        <h1 class="text-4xl font-bold">Presenting, SHSH Saver!</h1>
+        <div class="spacer4"></div>
+    <h2 class="text-2xl">This a free utility for saving the SHSH Blobs on A9 to A11 devices.</h2>
+    <h2 class="text-2xl">This includes the iPhone 6s to X. You can see the full list in the Supported Devices section.</h2>
+    <div class="spacer4"></div>
     <h2></h2>
-    <img src="shshsaver_image.png" alt="SHSH Saver Image" width="900 height="600">
-    <h2>Supported devices</h2>
-    <h4>iPhone 6s</h4>
-    <h4>iPhone SE (1st generation)</h4>
-    <h4>iPhone 7</h4>
-    <h4>iPhone 7 Plus</h4>
-    <h4>iPhone 8</h4>
-    <h4>iPhone 8 Plus</h4>
-    <h4>iPhone X</h4>
-    <h4>iPad Pro 12.9-inch (2015)</h4>
-    <h4>iPad Pro 9.7-inch (2016)</h4>
-    <h4>iPad Pro 10.5-inch 1st generation</h4>
-    <h4>iPod touch 7th generation</h4>
-    <h4>iPad 5th generation</h4>
-    <h4>iPad 6th generation</h4>
-    <h4>iPad 7th generation</h4>
-    <h4>NOTE: The tool does not support any devices that aren't checkm8-compatible.</h4>
-    <h4>The method that is used in this software does not support any non-checkm8 devices.</h4>
+    <img src="shshsaver_image.png" alt="SHSH Saver Image" width="700" height="400">
+            <div class="spacer3"></div>
+    <p class="mt-10 text-3xl font-bold">Supported devices</p>
+            <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">iPhone 6</h4>
+    <h4 class="mt-1 text-lg">iPhone 6 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone 6s</h4>
+    <h4 class="mt-1 text-lg">iPhone 6s Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone SE (1st generation)</h4>
+    <h4 class="mt-1 text-lg">iPhone 7</h4>
+    <h4 class="mt-1 text-lg">iPhone 7 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone 8</h4>
+    <h4 class="mt-1 text-lg">iPhone 8 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone X</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 12.9-inch (2015)</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 9.7-inch (2016)</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 10.5-inch 1st generation</h4>
+    <h4 class="mt-1 text-lg">iPod touch 7th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 5th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 6th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 7th generation</h4>
+    <h4 class="mt-1 text-lg">NOTE: The tool does not support any devices that aren't checkm8-compatible.</h4>
+    <h4 class="mt-1 text-lg">The method that is used in this software does not support any non-checkm8 devices.</h4>
+    <!-- Spacer -->
+    <div class="spacer1"></div>
+    <h2 class="mt-10 text-3xl font-bold">How to download SHSH Saver</h2>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">Open the link below to download the latest version.</h4>
+    <h4 class="mt-1 text-lg">Once you open the site, click on the blue download button to download.</h4>
+    <div class="spacer4"></div>
+    <a href="https://www.mediafire.com/file/j5xq4alts1a8gyd/SHSH_Saver_v1.1.zip/file" class="button">Download SHSH Saver v1.1 (Swift Re-write)</a>
+    <div class="spacer4"></div>
+    <a href="https://www.mediafire.com/file/h0bgekgl441530h/SHSH_Saver_v1.0.zip/file" class="button">Download SHSH Saver v1.0 (Old, less stable)</a>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">NOTE: If you see the message that the app cannot be opened because it's </h4>
+    <h4 class="mt-1 text-lg">from an unidentified developer, then just Right-click on the app file and select open. </h4>
+    <h4 class="mt-1 text-lg">This will allow you to open the bypass the unidentified developer message and open the app.</h4>
+<!--    <h4 class="mt-1 text-lg">If the app freezes the first time you open it, </h4>-->
+<!--    <h4 class="mt-1 text-lg">then just right-click on the SHSH Saver icon in the dock and select Force Quit.</h4>-->
+<!--    <h4 class="mt-1 text-lg">This will quit the app. You can reopen it and it shouldn't freeze this time.</h4>-->
     <!-- Spacer -->
     <div class="spacer"></div>
-    <h2>How to download SHSH Saver</h2>
-    <h4>Open the link below to download the latest version.</h4>
-    <h4>Once you open the site, click on the blue download button to download.</h4>
-    <a href="https://www.mediafire.com/file/h0bgekgl441530h/SHSH_Saver_v1.0.zip/file" class="button">Download SHSH Saver v1.0</a>
-    <h4>NOTE: If you see the message that the app cannot be opened because it's </h4>
-    <h4>from an unidentified developer, then just Right-click on the app file and select open. </h4>
-    <h4>This will allow you to open the bypass the unidentified developer message and open the app.</h4>
-    <h4>If the app freezes the first time you open it, </h4>
-    <h4>then just right-click on the SHSH Saver icon in the dock and select Force Quit.</h4>
-    <h4>This will quit the app. You can reopen it and it shouldn't freeze this time.</h4>
+    <h2 class="mt-10 text-3xl font-bold">How to use SHSH Saver</h2>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">[1] Open up the app that you downloaded from here.</h4>
+    <h4 class="mt-1 text-lg">If you encounter the "Untrusted Developer" message, then follow the steps above to fix that issue.</h4>
+    <h4 class="mt-1 text-lg">Any further launching issues you should contact me about.</h4>
+    <h4 class="mt-1 text-lg">[2] Enter DFU Mode on your device. There are various ways of doing this, depending on your device.</h4>
+    <h4 class="mt-1 text-lg">I would recommend looking up "How to Enter DFU Mode on " and then your device model.</h4>
+    <h4 class="mt-1 text-lg">Example might be "How to Enter DFU Mode on iPhone 7 Plus".</h4>
+    <h4 class="mt-1 text-lg">[3] Click on the "Boot Ramdisk" button.</h4>
+    <h4 class="mt-1 text-lg">Click OK on all the pop-ups and then when it prompts you, enter your device iOS version.</h4>
+    <h4 class="mt-1 text-lg">If you don't know the iOS version, then you can take a rough guess on the version.</h4>
+    <h4 class="mt-1 text-lg">Usually, putting the .0 of that version will work fine, like '14.0'.</h4>
+    <h4 class="mt-1 text-lg">Once entered, it will take a minute to create your ramdisk.</h4>
+    <h4 class="mt-1 text-lg">You will see a pop-up when it's done, then press OK to boot the ramdisk on your device.</h4>
+    <h4 class="mt-1 text-lg">NOTE: You should see the SSHRD logo then some verbose text on the screen.</h4>
+    <h4 class="mt-1 text-lg">If the device does anything different such as staying stuck on the logo,</h4>
+    <h4 class="mt-1 text-lg">or not lighting up at all, then there was an error while booting the ramdisk. Please contact me with your issue and I will try to help you.</h4>
+    <h4 class="mt-1 text-lg">[4] Click on the "Save Blobs" button. This will save the onboard blobs off of your device.</h4>
+    <h4 class="mt-1 text-lg">The tool will prompt you to save the blobs in a specific location on your computer.</h4>
+    <h4 class="mt-1 text-lg">You should chose a location to save. If not, then you will have to open the app's Resources folder to find your blobs.</h4>
+    <h4 class="mt-1 text-lg">Finally, enter a custom name for your blob file.</h4>
+    <h4 class="mt-1 text-lg">This can be anything, and can contain dots, underscores, slashes, dashes, and almost anything.</h4>
+    <h4 class="mt-1 text-lg">If you don't enter a custom name, then it will be the default, which is 'dumped.shsh'.</h4>
+    <h4 class="mt-1 text-lg">Enjoy using your saved blobs! They contain a generator, so that issue won't come up in FutureRestore.</h4>
+    <h4 class="mt-1 text-lg">If you want to learn more about Firmra1n, then please visit the <a href="Firmra1n.html">Firmra1n Page</a>.</h4>
+    <h3 class="mt-7 text-xl font-bold">Hope you enjoy using my software!</h3>
     <!-- Spacer -->
     <div class="spacer"></div>
-    <h2>How to use SHSH Saver</h2>
-    <h4>[1] Open up the app that you downloaded from here.</h4>
-    <h4>If you don't see the app show up after 10 seconds, then you can just click on the SHSH Saver icon in your Mac's dock to get it to show up.</h4>
-    <h4>[2] Enter DFU Mode on your device. There are various ways of doing this, depending on your device.</h4>
-    <h4>I would recommend looking up "How to Enter DFU Mode on " and then your device model.</h4>
-    <h4>Example might be "How to Enter DFU Mode on iPhone 7 Plus".</h4>
-    <h4>[3] Click on the "Boot Ramdisk" button.</h4>
-    <h4>This boots the pre-created Ramdisk on your device to enable SSH access.</h4>
-    <h4>NOTE: You should see the Apple logo then some verbose text on the screen.</h4>
-    <h4>If the device does anything different such as going straight into Recovery mode, 
-    <h4>not showing the text, or not booting up at all, then please contact me with your issue and I can try to help you.</h4>
-    <h4>[4] Click on the "Save Blobs" button. This will save the onboard blobs off of your device.</h4>
-    <h4>The tool will prompt you to save the blobs in  a specific location on your computer.</h4>
-    <h4>I would recommend doing this, because if you choose not to,</h4>
-    <h4>because then you will have to go all the way into the app's resources folder to access then again.</h4>
-    <h3>Hope you enjoy using my software!</h3>
-    <!-- Spacer -->
-    <div class="spacer"></div>
-    <h2>Need help?</h2>
-    <h3>I'm here to help if you need it.</h3>
-    <h3>I try my best to make SHSH Saver user-friendly and fix any bugs </p>
-    <p>but feel free to report any problems to me.</p>
+    <h2 class="mt-5 text-3xl font-bold">Need help?</h2>
+    <h3 class="mt-7 text-xl font-bold">I'm here to help if you need it.</h3>
+    <h3 class="mt-3 text-xl font-bold">I try my best to make SHSH Saver user-friendly and fix any bugs </p>
+    <p class="mt-3 text-xl font-bold">but feel free to report any problems to me.</p>
+    <div class="spacer4"></div>
     <a href="mailto:alwaysappleftd@icloud.com?subject=Issue%20with%20SHSH%20Saver" class="button2">Contact Always Apple FTD</a>
    <!-- Spacer -->
     <div class="spacer"></div>
