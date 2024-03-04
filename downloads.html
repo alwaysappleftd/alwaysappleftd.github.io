@@ -1,196 +1,864 @@
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Always Apple FTD - Downloads</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-	<style>
-    	  /* CSS for the Downloads page */
-         #downloads {
-      	   text-align: center;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .navbar {
+            position: fixed; /* Make it fixed to the top */
+            top: 0; /* Align to the top */
+            left: 0; /* Align to the left */
+            width: 100%; /* Stretch across the full width */
+            z-index: 1000; /* Ensure it stays on top of other content */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #5bbcf5;
+            height: 70px;
+        }
+        .navbar button {
+            background-color: gray;
+            color: black;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            border-radius: 7px;
+            height: 50px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        .navbar button:hover {
+            background-color: #0cfab3;
+        }
+        /* .navbar button.active {
+            background-color: #0471d6;
+        } */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        /* Style the links within the text */
+        .content-link {
+            color: blue; /* Blue color for the links */
+            font-family: Arial;
+            //text-decoration: underline; /* Underline the links */
+        }
+        .clickable-block {
+            display: block;
+            text-decoration: none; /* Remove underline from all the links inside */
+        }
+        .clickable-block:hover {
+            background-color: #f3f4f6; /* Slight background highlight on hover */
+        }
+        .hover-shadow:hover {
+            background-color: #f3f4f6; /* Slightly grayer background on hover */
+        }
+        .spacer1 {
+            height: 20px;
+        }
+        .spacer2 {
+            height: 7px;
+        }
+        .spacer3 {
+            height: 60px;
+        }
+        .spacer4 {
+            height: 30px;
+        }
+        body {
+          text-align: center;
+          height: 100vh;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        h1 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 60px;
+    }
+        h2 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 20px;
+    }
+        h3 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 10px;
+    }
+        h4 {
+         text-align: center;
+         font-size: 10px;
+         font-family: Tahoma;
+    }
+        #downloads p {
+         text-align: center;
+    }
+        a {
+          color: blue;
+    }
+        #shshsaver_page a {
+          color: blue;
+    }
+        #new_a a {
+          color: white;
     }
 
-    #downloads p {
-      color: blue;
-      font-size: 50px;
-    }
-  </style>
-  </head>
-  <body>
+        .spacer {
+          height: 50px;
+        }
 
-  <!-- Navigation bar -->
+        .spacer p {
+          font-size: 14px; /* Adjust the font size as needed */
+        }
+
+        .button {
+          display: inline-block;
+          padding: 10px 60px;
+          background-color: #2a96fa;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-family:  Malayalam MN;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+          background-color: #0d69bf; /* Updated hover color */
+        }
+        .button2 {
+          display: inline-block;
+          padding: 10px 40px;
+          background-color: #e3653b;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .button2:hover {
+          background-color: #a33612; /* Updated hover color */
+        }
+        /* Styles for the expand button */
+        #expandButton {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            width: 100px; /* Set a fixed width and height */
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white">
+    <!-- Navigation Bar -->
     <div class="navbar">
-    <button class="tablinks" onclick="navigateToPage('index.html')">Home</button>
-    <button class="tablinks" onclick="navigateToPage('news.html')">News</button>
-    <button class="tablinks" onclick="navigateToPage('web_blog.html')">Web Blog</button>
-    <button class="tablinks" onclick="navigateToPage('helpful_hacks.html')">Helpful Hacks</button>
-    <button class="tablinks" onclick="navigateToPage('downloads.html')">Downloads</button>
-    <button class="tablinks" onclick="navigateToPage('about.html')">About</button>
-  </div>
-
-  <script>
-  function navigateToPage(pageUrl) {
-    window.location = pageUrl;
-  }
-  </script>
+        <!-- Framed tab buttons with specified styles -->
+        <a href="index.html" class="no-underline">
+            <button class="active">Home</button>
+        </a>
+        <a href="news.html" class="no-underline">
+            <button>News</button>
+        </a>
+        <a href="web_blog.html" class="no-underline">
+            <button>Web Blog</button>
+        </a>
+        <a href="helpful_hacks.html" class="no-underline">
+            <button>Helpful Hacks</button>
+        </a>
+        <a href="downloads.html" class="no-underline">
+            <button>Downloads</button>
+        </a>
+        <a href="about.html" class="no-underline">
+            <button>About</button>
+        </a>
+    </div>
 
     <!-- Downloads page -->
     <div id="downloads">
-  <h1>Downloads</h1>
-  <h3>DISCLAIMER: Most of these softwares are for Mac. ONLY 3uTools will work on Windows. If you want to get one of these softwares for a PC then you can contact me at alwaysappleftd@icloud.com or message me on my social media accounts for help. There may not always be a Windows version though.</h3>
-<h4>Data Recovery/Transfer</h4>
-  <table bgcolor="black" width="1160" height="%" align="center">
-        <tr bgcolor="##0084ff" height="40">
-            <th width="100">Name</th≥,jham,>
-            <th width="100">Purpose/Description</th>
-            <th width="100">Creator</th>
-            <th width="100">Link</th>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">Wipera1n</td>
-            <td>Erases A9 to A11 iDevices without losing the iOS version!</td>
-            <td>Always Apple FTD</td>
-            <td><a href="https://www.mediafire.com/file/tp73ia32nhdvpzl/Wipera1n_v1.2_%255BRELEASE%255D.zip/file">Download</a></td>
-	</tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">SHSH Saver</td>
-            <td>Save your onboard SHSH Blobs for future downgrades!</td>
-            <td>Always Apple FTD</td>
-            <td><a href="https://www.mediafire.com/file/h0bgekgl441530h/SHSH_Saver_v1.0.zip/file">Download</a></td>
-	</tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">AnyTrans</td>
-            <td>Transfer apps, music and lots of other types of files!</td>
-            <td>iMobie Inc.</td>
-            <td><a href="https://www.imobie.com/go/download.php?product=atio&id=3">Download</a></td>
-	</tr>
-        <tr bgcolor="#38ced6" align="center">
-            <td height="60">3uTools</td>
-            <td>Flash, jailbreak and download ringtones/wallpapers to iDevices.</td>
-            <td>3uTools</td>
-            <td><a href="http://3u.com">Download</a></td>
-        </tr>
-        </tr>
-    </table>
-<h4>iCloud Bypass</h4>
-  <table bgcolor="black" width="1160" height="%" align="center">
-        <tr bgcolor="##0084ff" height="40">
-            <th width="100">Name</th≥,jham,>
-            <th width="100">Purpose/Description</th>
-            <th width="100">Creator</th>
-            <th width="100">Link</th>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">Sliver</td>
-            <td>Bypass iCloud lock on A4/A5/A6/A7 Devices, iOS 12/13/14 Checkra1n iCloud Bypass, MDM Lock bypass and much more!</td>
-            <td><a href="https://twitter.com/sliver752?lang=en">Apple Tech 752</a></td>
-            <td><a href="https://www.appletech752.com/Downloads/SliverV6.2.dmg">Download</a></td>
-	</tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">Checkm8-a5</td>
-            <td>Bypass the iCloud lock on all A5 devices. You must upload to an Arduino Board first.</td>
-            <td><a href="https://twitter.com/synackuk">Synackuk</a></td>
-            <td><a href="https://www.github.com/synackuk/checkm8-a5">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">DarkRa1n iCloud bypass tool</td>
-            <td>Bypass iCloud lock on checkm8-compatible devices on iOS 15.0 - 16.2! You must jailbreak your device with the Palera1n jailbreak before bypassing. </td>
-            <td><a href="https://twitter.com/MrCreator1">Mr. Creator</a></td>
-            <td><a href="https://mega.nz/file/DvpS2QaQ#T9Ap1tmu0Enn48z6GaOXktGOFKba59i0erTboMitoDw">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">iPass iCloud Bypass tool</td>
-            <td>Bypass iCloud lock on checkm8-compatible devices on iOS 16.0 - 16.3.1!</td>
-            <td><a href="https://twitter.com/MrCreator1">Mr. Creator</a></td>
-            <td><a href="https://mega.nz/file/DuJnxJqY#x030OhLYO7S1fRzmRLnZRofdJLrBYhz_TScfr9rm0k0">Download</a></td>
-        </tr>
-  </table>
-<h4>Jailbreak</h4>
-  <table bgcolor="black" width="1160" height="%" align="center">
-        <tr bgcolor="##0084ff" height="40">
-            <th width="100">Name</th≥,jham,>
-            <th width="100">Purpose/Description</th>
-            <th width="100">Creator</th>
-            <th width="100">Link</th>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">Palera1n</td>
-            <td>Jailbreak iOS 15.0 - 16.5!</td>
-            <td>Palera1n Developers Team</td>
-            <td><a href="https://github.com/palera1n/palera1n/releases/download/v2.0.0-beta.7/palera1n-macos-universal">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">checkra1n</td>
-            <td>Jailbreak iOS 12.0 - 14.8.1!</td>
-            <td>checkra1n Developers Team</td>
-            <td><a href="https://assets.checkra.in/downloads/macos/754bb6ec4747b2e700f01307315da8c9c32c8b5816d0fe1e91d1bdfc298fe07b/checkra1n%20beta%200.12.4.dmg">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">Unc0ver</td>
-            <td>Jailbreak iOS 11.0 - 14.8</td>
-            <td>Unc0ver Developers Team</td>
-            <td><a href="https://unc0ver.dev/downloads/8.0.2/9e44edfbfd1905cadf23c3b9ad1d5bed683ce061/unc0ver_Release_8.0.2.ipa">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">doubleH3lix</td>
-            <td>Jailbreak any iPhone 5 - iPhone 7 running on iOS 10.0 - 10.3.3!</td>
-            <td><a href="https://twitter.com/tihmstar">Tihmstar</a></td>
-            <td><a href="https://github.com/qbap/ONEJailbreak/raw/main/doubleH3lix-RC8.ipa">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">H3lix</td>
-            <td>Jailbreak any iPhone 5 on iOS 10.3.3 - 10.3.4!</td>
-            <td><a href="https://twitter.com/tihmstar">Tihmstar</a></td>
-            <td><a href="https://ios.vsharepe.com/jailbreak/h3lix-jailbreak.ipa">Download</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">Phoenix</td>
-            <td>Jailbreak all A5 devices on iOS 9.3.5 - 9.3.6!</td>
-            <td><a href="https://twitter.com/tihmstar">Tihmstar</a></td>
-            <td><a href="https://ios.vsharepe.com/jailbreak/Phoenix-jb.ipa">Download</a></td>
-        </tr>
-  </table>
-<h4>Helpful websites/resources</h4>
-  <table bgcolor="black" width="1160" height="%" align="center">
-        <tr bgcolor="##0084ff" height="40">
-            <th width="100">Name</th≥,jham,>
-            <th width="100">Purpose/Description</th>
-            <th width="100">Creator</th>
-            <th width="100">Link</th>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">My GitHub</td>
-            <td>One of the platforms that I use to share files/projects that I have coded.</td>
-            <td>GitHub Inc.</td>
-            <td><a href="https://github.com/alwaysappleftd">Open Link</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">IPSW Downloads</td>
-            <td>Download IPSW files for all iPhones, iPads and iPod Touches on any iOS version!</td>
-            <td>Callum Jones</td>
-            <td><a href="https://ipsw.me">Open Link</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">The iPhone Wiki</td>
-            <td>Lots of helpful resources for iOS hackers and enthusiasts such as Firmware keys, IPSW and iDevice information, list of exploits and so much more!</td>
-            <td>[Unknown]</td>
-            <td><a href="https://theiphonewiki.com">Open Link</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">iDownloadBlog</td>
-            <td>Helpful website for jailbreak information, tweaks and lots more!</td>
-            <td>iDownloadBlog.com</td>
-            <td><a href="https://idownloadblog.com">Open Link</a></td>
-        </tr>
-	<tr bgcolor="#38ced6" align="center">
-            <td height="60">ONEjailbreak</td>
-            <td>Helpful website to learn about all kinds of jailbreak tweaks, different jailbreak tools and occasionally some iCloud bypasses!</td>
-            <td><a href="https://twitter.com/onejailbreak_">Kuba Pawlak</td>
-            <td><a href="https://onejailbreak.com">Open Link</a></td>
-        </tr>
-    </table>
-<h3 align="center">I hope that one of these links solved your issue!</h3>
+        
+        <div class="p-4 mx-auto my-4" style="width: 98vw; height: 95vh; overflow: auto;">
+            <div class="spacer3"></div>
+            <h1 class="text-4xl font-bold">Downloads</h1>
+            <div class="spacer4"></div>
+            <h2 class="text-2xl">DISCLAIMER: Most of these softwares are for Mac.</h2>
+            <h2 class="text-2xl">ONLY 3uTools will work on Windows.</h2>
+            <h2 class="text-2xl">If you want to get one of these softwares for a PC then you can contact me at alwaysappleftd@icloud.com or message me on my social media accounts for help.</h2>
+            <h2 class="text-2xl">There may not always be a Windows version though.</h2>
+            <div class="spacer3"></div>
+            <h4 class="text-xl">Data Recovery/Transfer</h4>
+            <table class="min-w-full divide-y-4 divide-gray-200 table-fixed rounded-2xl overflow-hidden">
+                <thead class="bg-blue-500 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Name
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Purpose/Description
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Creator
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4">
+                            Link
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y-4 divide-gray-200">
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Wipera1n
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Erases A9 to A11 iDevices without losing the iOS version!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://youtube.com/@alwaysappleftd/videos" class="text-blue-600 hover:text-blue-800">Always Apple FTD</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.mediafire.com/file/tp73ia32nhdvpzl/Wipera1n_v1.2_%255BRELEASE%255D.zip/file" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            SHSH Saver
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Save your onboard SHSH Blobs for future downgrades!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://youtube.com/@alwaysappleftd/videos" class="text-blue-600 hover:text-blue-800">Always Apple FTD</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.mediafire.com/file/j5xq4alts1a8gyd/SHSH_Saver_v1.1.zip/file" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            FutureRestore GUI
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Downgrade your devices with saved SHSH Blobs! A12+ devices (iPhone XR and above) will likely fail although it is technically not specific to checkm8-compatible devices
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            CoocooFroggy
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/CoocooFroggy/FutureRestore-GUI/releases/download/v1.98.3/FutureRestore-GUI-Mac-1.98.3.dmg" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            AnyTrans (Full version)
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Transfer apps, music and lots of other types of files!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iMobie Inc.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://send.cm/d/iFgA" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            3uTools
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Flash, jailbreak and download ringtones/wallpapers to iDevices.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            3uTools
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://url.3u.com/zmAJjyaa" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            i4Tools
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            3uTools alternative for macOS! The software comes in the Chinese language only
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            SHENZHEN WAIP Infomation Technology Co., Ltd
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://url.i4.cn/fqIBBbaa" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            balenaEtcher
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Flash ISO files/images to USB drives
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Balena
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/balena-io/etcher/releases/download/v1.18.11/balenaEtcher-1.18.11.dmg" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            BetterZip (Full version)
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Edit Zip files without opening them! (Very useful for editing IPSW firmwares)
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            MacItBetter, Robert Rezabek
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://send.cm/d/OeBj" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            AltServer
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Sideload IPA files onto many different iDevices! You must have an iCloud email address to sign in to before the tool can sideload the IPA
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Riley Testut
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://cdn.altstore.io/file/altstore/altserver.zip" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iFunBox
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Transfer files and install apps on iDevices!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Appholly
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.i-funbox.com/download/iFunBox_1.9.dmg" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Cyberduck
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Transfer, modify and delete files over SSH Ramdisk!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iterate GmbH
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://update.cyberduck.io/Cyberduck-8.7.2.40975.zip" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            FileZilla
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Transfer, modify and delete files over SSH Ramdisk!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Tim Kosse, FileZilla author
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://dl1.cdn.filezilla-project.org/client/FileZilla_3.66.5_macos-x86.app.tar.bz2?h=UHWh0i3kt5hfO5IFxuMivQ&x=1707596966" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    </tr>
+            </table>
+            <div class="spacer3"></div>
+            <h4 class="text-xl">iCloud Bypass</h4>
+            <table class="min-w-full divide-y-4 divide-gray-200 table-fixed rounded-2xl overflow-hidden">
+                <thead class="bg-blue-500 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Name
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Purpose/Description
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Creator
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                            Link
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y-4 divide-gray-200">
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Sliver
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Bypass iCloud lock on A4/A5/A6/A7 Devices, iOS 12/13/14 Checkra1n iCloud Bypass, MDM Lock bypass and much more!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/appletech752" class="text-blue-600 hover:text-blue-800">Apple Tech 752</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.appletech752.com/Downloads/SliverV6.2.dmg" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            ByteBurst
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            iOS 14.0 - 16.7.5 Untethered iCloud bypass <a href="https://euphoriatools.com/byteburst/register.php" class="text-blue-600 hover:text-blue-800">(registration $5 per device)</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/MrCreator1" class="text-blue-600 hover:text-blue-800">Mr. Creator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/ZB4kWIzL#qkAi8I5JwOXhUM6kY-4-lNL-e7eLWnNfhNP1xQtNzyM" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iSkip
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            iOS 15.0 - 16.5 Tethered iCloud bypass for checkm8-compatible devices
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/MrCreator1" class="text-blue-600 hover:text-blue-800">Mr. Creator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/EEoGRaiS#TLZjWOEjUkr4zMC0iPMQbLKmjfcSCYIyj4NUm9DA3wE" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            FactoryPass
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Untethered WiFi only iCloud bypass for checkm8-compatible devices
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/MrCreator1" class="text-blue-600 hover:text-blue-800">Mr. Creator</a>
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://mega.nz/file/1NhSBCpZ#pHbLWSFJYll11UOmArEZKjIimUt9Ux-pB_FdbPGfiQs" class="text-blue-600 hover:text-blue-800">Download</a>
+                            <div class="spacer2"></div>
+                            <a href="https://euphoriatools.com/factoryactivation_magic/fp_verified_register.php" class="text-blue-600 hover:text-blue-800">Free Registration Page</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            FrostByte (Outdated, not working)
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Untethered iCloud bypass tool for iOS 15.0 - 16.5 for checkm8-compatible devices. The tool is not maintained or working anymore
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/MrCreator1" class="text-blue-600 hover:text-blue-800">Mr. Creator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/6mwnnLaK#gPPWP1JJ1ZN6LFyS3nkh-2i_3_6tEVlEVLiQD-KqvUc" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Hackt1vatorUnlock
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            iCloud bypass tool for iOS 12 - 16 with multiple options such as Passcode bypass and tethered Hello screen bypass for checkm8-compatible devices
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/Hackt1vator" class="text-blue-600 hover:text-blue-800">Hackt1vator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.mediafire.com/file/8y06fr8gzomsnle/Hackt1vatorUnlock_%255BFirmwareForest.Com%255D.rar/file" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Hackt1vatorRamdisk
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Untethered iCloud bypass tool for iOS 12 - 16 for checkm8-compatible devices
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/Hackt1vator" class="text-blue-600 hover:text-blue-800">Hackt1vator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/Hackt1vator/Hackt1vator.github.io/releases/download/install/Hackt1vatorRamdisk.dmg" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            MagicCFG
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Software for changing the Serial number of checkm8-compatible devices. A9 devices (iPhone 6s) and below need a DCSD cable in order to read the device information
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Jan Fabel
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.mediafire.com/file/hm4tutk3iidz03u/MagicCFG_v1.3_RELEASE.dmg/file" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            purpleSLIVER
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Software for booting Purple mode on A5 - A7 iPads + iPhone 6s
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/appletech752" class="text-blue-600 hover:text-blue-800">Apple Tech 752</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.appletech752.com/Downloads/purpleSliverV3.0.dmg" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Purple PRO
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Tool for booting Purple mode on iPhone 6 to iPhone X (A8 to A11)
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Giulio Zompetti (@1nsane_dev)
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/yUIQTRqB#M9FYAJ-8vPgfw4wTet6gDoOHBNql78akskWPTKz4kDk" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            HFZActivatorSNEdit
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Edit Serial number, WiFi address and Bluetooth address when in Purple mode. A9 devices (iPhone 6s) and below need a DCSD cable to read the information off the device.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            HFZ Activator Team
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/folder/JBEQSBaK#P-MMA1LGZergdz2-3vec6A/file/BAcgCJyK" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            MagicCFG Recovery (macOS Mojave and below)
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            A software for recovering your lost Serial number, WiFi address and bluetooth address from checkm8-compatible devices. The device must be jailbroken before use. The software only works on macOS Mojave and below.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Jan Fabel
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.mediafire.com/file/gdlxmew4o5n0tyz/MagicCFG_Recovery_v1.3.app.zip/file" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            checkm8-a5
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Bypass the iCloud lock on all A5 devices. You must upload to an Arduino Board first.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/synackuk" class="text-blue-600 hover:text-blue-800">Synackuk</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.github.com/synackuk/checkm8-a5" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            DarkRa1n iCloud bypass tool
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Bypass iCloud lock on checkm8-compatible devices on iOS 15.0 - 16.2! You must jailbreak your device with the Palera1n jailbreak before bypassing.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/MrCreator1" class="text-blue-600 hover:text-blue-800">Mr. Creator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/DvpS2QaQ#T9Ap1tmu0Enn48z6GaOXktGOFKba59i0erTboMitoDw" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iPass iCloud Bypass tool
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Bypass iCloud lock on checkm8-compatible devices running iOS 16.0 - 16.3.1!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/MrCreator1" class="text-blue-600 hover:text-blue-800">Mr. Creator</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/DuJnxJqY#x030OhLYO7S1fRzmRLnZRofdJLrBYhz_TScfr9rm0k0" class="text-blue-600 hover:text-blue-800">Download</a>
+                        </td>
+                    </tr>
+                    </tr>
+            </table>
+            <div class="spacer3"></div>
+            <h4 class="text-xl">Jailbreak</h4>
+            <table class="min-w-full divide-y-4 divide-gray-200 table-fixed rounded-2xl overflow-hidden">
+                <thead class="bg-blue-500 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Name
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Purpose/Description
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Creator
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                            Link
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y-4 divide-gray-200">
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Palera1n
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Jailbreak iOS 15.0 - 17.2 on checkm8-compatible devices!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Palera1n Developers Team
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/palera1n/palera1n/releases/download/v2.0.0-beta.8/palera1n-macos-universal" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            checkra1n
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Jailbreak iOS 12.0 - 14.8.1 on checkm8-compatible devices!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            checkra1n Developers Team
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://assets.checkra.in/downloads/macos/754bb6ec4747b2e700f01307315da8c9c32c8b5816d0fe1e91d1bdfc298fe07b/checkra1n%20beta%200.12.4.dmg" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Unc0ver
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Jailbreak iOS 11.0 - 14.8.1 on checkm8 AND non-checkm8 devices!!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Unc0ver Developers Team (main @Pwn20wnd)
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://unc0ver.dev/downloads/8.0.2/9e44edfbfd1905cadf23c3b9ad1d5bed683ce061/unc0ver_Release_8.0.2.ipa" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            doubleH3lix
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Jailbreak any iPhone 5s - iPhone 7 running on iOS 10.0 - 10.3.3!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/tihmstar" class="text-blue-600 hover:text-blue-800">Tihmstar</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/qbap/ONEJailbreak/raw/main/doubleH3lix-RC8.ipa" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            H3lix
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Jailbreak any all A6 devices on iOS 10.3.3 - 10.3.4!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/tihmstar" class="text-blue-600 hover:text-blue-800">Tihmstar</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://mega.nz/file/T0lTxASD#u8OJ2x9xNCSDkHhCPbX403zG_GOWgMQu3Sguv3rK2lQ" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Phoenix
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Jailbreak all A5 devices on iOS 9.3.5 - 9.3.6!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/tihmstar" class="text-blue-600 hover:text-blue-800">Tihmstar</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://ios.vsharepe.com/jailbreak/Phoenix-jb.ipa" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+            </table>
+            <div class="spacer3"></div>
+            <h4 class="text-xl">Helpful websites/resources</h4>
+            <table class="min-w-full divide-y-4 divide-gray-200 table-fixed rounded-2xl overflow-hidden">
+                <thead class="bg-blue-500 text-white">
+                    <tr>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Name
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Purpose/Description
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider border-r-4 border-gray-200">
+                            Creator
+                        </th>
+                        <th class="px-6 py-3 text-left text-xs font-medium uppercase tracking-wider">
+                            Link
+                        </th>
+                    </tr>
+                </thead>
+                <tbody class="bg-white divide-y-4 divide-gray-200">
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            My GitHub
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            One of the platforms that I use to share files/projects that I have coded.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            GitHub Inc.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/alwaysappleftd" class="text-blue-600 hover:text-blue-800">Open Link</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            IPSW Downloads
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Download IPSW files for all iPhones, iPads and iPod Touches on any iOS version!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Callum Jones
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://ipsw.me" class="text-blue-600 hover:text-blue-800">Open Link</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Apple Internal Applications collection!
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Huge collection of Apple Internal software! This includes iOS Restore tools, Tons of diagnostics tools, Device management tools, Factory development tools, etc. Tools are from many different years so not all will open on the latest macOS.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Apple, Inc.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://www.mediafire.com/file/5wcnqjb1yykotiz/Apple+Internal+macOS+Applications+Collection.zip/file" class="text-blue-600 hover:text-blue-800"">Open Link</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iDownloadBlog
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Helpful website for jailbreak information, tweaks, iOS downgrades and lots more!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iDownloadBlog.com
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://idownloadblog.com" class="text-blue-600 hover:text-blue-800">Open Link</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            ONEjailbreak
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Helpful website to learn about all kinds of jailbreak tweaks, different jailbreak tools and even iCloud bypasses!
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            <a href="https://twitter.com/onejailbreak_" class="text-blue-600 hover:text-blue-800">Kuba Pawlak</a>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://onejailbreak.com" class="text-blue-600 hover:text-blue-800">Open Link</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            iTerm
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            macOS Terminal Alternative! It works with all the commands installed on your Mac.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            George Nachman
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://iterm2.com/downloads/stable/latest" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+                    <tr class="hover:bg-teal-200">
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            OpenCore Patcher
+                        </td>
+                        <td class="px-6 py-4 max-w-xs overflow-hidden text-overflow-ellipsis whitespace-normal border-r-4 border-gray-200 bg-teal-300">
+                            Run Unsupported macOS versions on old Macs! Example, you could install macOS Ventura on a MacBook Pro 2009.
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap border-r-4 border-gray-200 bg-teal-300">
+                            Dortania
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap bg-teal-300">
+                            <a href="https://github.com/dortania/OpenCore-Legacy-Patcher/releases/download/1.3.0/OpenCore-Patcher-GUI.app.zip" class="text-blue-600 hover:text-blue-800">Download</a></td>
+                        </td>
+                    </tr>
+            </table>
+            <div class="spacer"></div>
+            <h3 class="text-2xl" align="center">I hope one of these links solved a problem!</h3>
+            <div class="spacer1"></div>
+        </div>
 </div>
   </body>
 </html>
-
-    
