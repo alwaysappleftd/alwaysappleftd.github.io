@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Always Apple FTD - Passra1n</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .navbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #5bbcf5;
+            height: 70px;
+        }
+        .navbar button {
+            background-color: gray;
+            color: black;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            border-radius: 7px;
+            height: 50px;
+            transition: background-color 0.3s ease;
+            margin-right: 10px;
+        }
+        .navbar button:hover {
+            background-color: #0cfab3;
+        }
+        /* .navbar button.active {
+            background-color: #0471d6;
+        } */
+        .tabcontent {
+            display: none;
+            padding: 6px 12px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+        /* Style the links within the text */
+        .content-link {
+            color: blue; /* Blue color for the links */
+            font-family: Arial;
+            //text-decoration: underline; /* Underline the links */
+        }
+        .clickable-block {
+            display: block;
+            text-decoration: none; /* Remove underline from all the links inside */
+        }
+        .clickable-block:hover {
+            background-color: #f3f4f6; /* Slight background highlight on hover */
+        }
+        .hover-shadow:hover {
+            background-color: #f3f4f6; /* Slightly grayer background on hover */
+        }
+        .spacer1 {
+            height: 20px;
+        }
+        .spacer2 {
+            height: 7px;
+        }
+        .spacer3 {
+            height: 60px;
+        }
+        .spacer4 {
+            height: 30px;
+        }
+        body {
+          text-align: center;
+          height: 100vh;
+        }
+
+        img {
+          display: block;
+          margin: 0 auto;
+        }
+
+        h1 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 60px;
+    }
+        h2 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 20px;
+    }
+        h3 {
+         text-align: center;
+         font-family: PT Sans Caption;
+         font-size: 10px;
+    }
+        h4 {
+         text-align: center;
+         font-size: 10px;
+         font-family: Tahoma;
+    }
+        p {
+         text-align: center;
+    }
+
+        .spacer {
+          height: 50px;
+        }
+
+        .spacer p {
+          font-size: 14px; /* Adjust the font size as needed */
+        }
+
+        .button {
+          display: inline-block;
+          padding: 10px 60px;
+          background-color: #2a96fa;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          font-family:  Malayalam MN;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+          background-color: #0d69bf; /* Updated hover color */
+        }
+        .button2 {
+          display: inline-block;
+          padding: 10px 40px;
+          background-color: #e3653b;
+          color: white;
+          text-decoration: none;
+          border-radius: 8px;
+          font-size: 16px;
+          border: none;
+          transition: background-color 0.3s ease;
+        }
+
+        .button2:hover {
+          background-color: #a33612; /* Updated hover color */
+        }
+        /* Styles for the expand button */
+        #expandButton {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background-color: #333;
+            color: white;
+            padding: 15px;
+            font-size: 24px;
+            cursor: pointer;
+            border: none;
+            width: 100px; /* Set a fixed width and height */
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body class="font-inter bg-white">
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <!-- Framed tab buttons with specified styles -->
+        <a href="index.html" class="no-underline">
+            <button class="active">Home</button>
+        </a>
+        <a href="news.html" class="no-underline">
+            <button>News</button>
+        </a>
+        <a href="web_blog.html" class="no-underline">
+            <button>Web Blog</button>
+        </a>
+        <a href="helpful_hacks.html" class="no-underline">
+            <button>Helpful Hacks</button>
+        </a>
+        <a href="downloads.html" class="no-underline">
+            <button>Downloads</button>
+        </a>
+        <a href="about.html" class="no-underline">
+            <button>About</button>
+        </a>
+    </div>
+
+    <!-- Passra1n page -->
+    <div id="passra1n_page">
+        
+        <div class="spacer3"></div>
+        <h1 class="text-4xl font-bold">Presenting, Passra1n!</h1>
+        <div class="spacer4"></div>
+    <h2 class="text-2xl">This a free software for bypassing the iCloud lock on A7 to A11 devices.</h2>
+    <h2 class="text-2xl">This includes the iPhone 5s to X. You can see the full list in the Supported Devices section.</h2>
+    <div class="spacer4"></div>
+    <h2></h2>
+    <img src="passra1n_image.png" alt="Passra1n Image" width="700" height="400">
+            <div class="spacer3"></div>
+    <p class="mt-10 text-3xl font-bold">Supported devices</p>
+            <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">iPhone 5s</h4>
+    <h4 class="mt-1 text-lg">iPhone 6</h4>
+    <h4 class="mt-1 text-lg">iPhone 6 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone 6s</h4>
+    <h4 class="mt-1 text-lg">iPhone 6s Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone SE (1st generation)</h4>
+    <h4 class="mt-1 text-lg">iPhone 7</h4>
+    <h4 class="mt-1 text-lg">iPhone 7 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone 8</h4>
+    <h4 class="mt-1 text-lg">iPhone 8 Plus</h4>
+    <h4 class="mt-1 text-lg">iPhone X</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 12.9-inch (2015)</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 9.7-inch (2016)</h4>
+    <h4 class="mt-1 text-lg">iPad Pro 10.5-inch 1st generation</h4>
+    <h4 class="mt-1 text-lg">iPod touch 7th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 5th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 6th generation</h4>
+    <h4 class="mt-1 text-lg">iPad 7th generation</h4>
+    <h4 class="mt-1 text-lg">NOTE: The tool does not support any devices that aren't checkm8-compatible.</h4>
+    <h4 class="mt-1 text-lg">The method that is used in this software does not support any non-checkm8 devices.</h4>
+    <!-- Spacer -->
+    <div class="spacer1"></div>
+    <h2 class="mt-10 text-3xl font-bold">How to download Passra1n</h2>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">Open the link below to download the latest version.</h4>
+    <h4 class="mt-1 text-lg">Once you open the site, click on the blue download button to download.</h4>
+    <div class="spacer4"></div>
+    <a href="https://www.mediafire.com/file/nsfceh064v6ritl/Passra1n_v1.0_Beta.zip/file" class="button">Download Passra1n v1.0 Beta</a>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">NOTE: If you see the message that the app cannot be opened because it's </h4>
+    <h4 class="mt-1 text-lg">from an unidentified developer, then just Right-click on the app file and select open. </h4>
+    <h4 class="mt-1 text-lg">This will allow you to open the bypass the unidentified developer message and open the app.</h4>
+    <h4 class="mt-1 text-lg">If the app still won't open, then follow these steps:</h4>
+    <h4 class="mt-1 text-lg">Open up a blank Terminal window. You can find the Terminal app in the Other folder in your Launchpad.</h4>
+    <h4 class="mt-1 text-lg">Type, all lowercase, 'xattr -cr', without the quotes, then Drag and drop the Passra1n</h4>
+    <h4 class="mt-1 text-lg">application you downloaded into the Terminal window.</h4>
+    <h4 class="mt-1 text-lg">Finally, press Enter to run the command.</h4>
+    <h4 class="mt-1 text-lg"></h4>
+    <h4 class="mt-1 text-lg">Now, these steps will allow the app to open.</h4>
+    <h4 class="mt-1 text-lg">Any further launching issues you should contact me about.</h4>
+    
+    <!-- Spacer -->
+    <div class="spacer"></div>
+    <h2 class="mt-10 text-3xl font-bold">How to use Passra1n</h2>
+    <div class="spacer4"></div>
+    <h2 class="mt-2 text-xl font-bold">IMPORTANT! The server used in this tool is 100% owned by Apple Tech 752!</h2>
+    <h2 class="mt-2 text-xl font-bold">Huge thanks to him for his server, this method would not be possible without it!</h2>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-lg">[1] Open up the app that you downloaded from here.</h4>
+    <h4 class="mt-1 text-lg">If you encounter the "Untrusted Developer" message, then follow the steps above to fix that issue.</h4>
+    <h4 class="mt-1 text-lg">Any further launching issues you should contact me about.</h4>
+    <h4 class="mt-1 text-lg">[2] Click the "Setup Passra1n" button. This will make sure everything is installed and ready to go for using Passra1n.</h4>
+    <h4 class="mt-1 text-lg">[3] Click on the "Jailbreak Device" button.</h4>
+    <h4 class="mt-1 text-lg">If you are already jailbroken, click on "Already Done Jailbreak"</h4>
+    <h4 class="mt-1 text-lg">If not, click "Open Checkra1n (Built in to this app)" button.</h4>
+    <h4 class="mt-1 text-lg">The checkra1n application is built into Passra1n and you don't need to have it in your /Applications folder.</h4>
+    <h4 class="mt-1 text-lg">Run through the jailbreak steps in the checkra1n app.</h4>
+    <h4 class="mt-1 text-lg">You will need to enter DFU Mode on your device. There are various ways of doing this, depending on your device.</h4>
+    <h4 class="mt-1 text-lg">I would recommend looking up "How to Enter DFU Mode on " and then your device model.</h4>
+    <h4 class="mt-1 text-lg">Example might be "How to Enter DFU Mode on iPhone 6s".</h4>
+    <h4 class="mt-1 text-lg">Make sure checkra1n says "All Done" after the device boots up.</h4>
+    <h4 class="mt-1 text-lg">[4] Click on the "Bypass Device!" button.</h4>
+    <h4 class="mt-1 text-lg">The tool will mount the devices's filesystem, inject the certificate, activate the device tethered.</h4>
+    <h4 class="mt-1 text-lg">Then, the tool will prompt you to complete a few simple instructions.</h4>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-2xl">A quick explanation of what it will ask you do do:</h4>
+    <h4 class="mt-1 text-lg">Set up your device.</h4>
+    <h4 class="mt-1 text-lg">Open the checkra1n loader (most times on the second screen) and install Cydia.</h4>
+    <h4 class="mt-1 text-lg">Open Cydia up and ignore all upgrades.</h4>
+    <h4 class="mt-1 text-lg">Click the Search icon tab on the far right bottom, tap the Search bar, and search for the package 'Cydia Substrate'.</h4>
+    <h4 class="mt-1 text-lg">The quotes are just to show you what to type. They are not necessary when typing it in.</h4>
+    <h4 class="mt-1 text-lg">Tap Modify, then Install, and finally, Confirm.</h4>
+    <h4 class="mt-1 text-lg">The package will install, then click the 'Restart SpringBoard' button when it is done.</h4>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-2xl">The tool has the full instructions so please don't rely on this website page for full info.</h4>
+    <h4 class="mt-1 text-lg">Once these steps are done, click the green "Cydia Substrate is Installed with No Errors" button in Passra1n.</h4>
+    <h4 class="mt-1 text-lg">The tool will make some changes to your device, and activate it untethered.</h4>
+    <h4 class="mt-1 text-lg">Lastly, there will be some final steps. They might seem complicated, but it's actually really simple.</h4>
+    <h4 class="mt-1 text-lg">Before attempting these steps, make sure your iCloud unlocked device is set up!</h4>
+    <h4 class="mt-1 text-lg">The button that needs to be clicked sometimes doesn't appear when the device is on the Setup.app.</h4>
+    <h4 class="mt-1 text-lg">Eject the current SIM card in your iCloud bypassed device (or get another one from any iPhone)</h4>
+    <h4 class="mt-1 text-lg">Insert this SIM card into an iCloud unlocked device (it can me FMI on just not bypassed)</h4>
+    <h4 class="mt-1 text-lg">Open Settings on the Apple device you just put the SIM card into, then go to Carrier - SIM PIN</h4>
+    <h4 class="mt-1 text-lg">Slide the switch to the green ON, and then enter the PIN for your carrier. Most SIM cards are 1111</h4>
+    <h4 class="mt-1 text-lg">Once you have saved the PIN, eject the SIM card from the device then put it back in. If the prompt for the PIN appears, you're good to go.</h4>
+    <h4 class="mt-1 text-lg">Make sure your iCloud unlocked device is set up!</h4>
+    <h4 class="mt-1 text-lg">The Cancel button sometimes doesn't appear when the device is on the Setup.app.</h4>
+    <h4 class="mt-1 text-lg">Eject the SIM from the device you added the PIN on, then insert that SIM into your iCloud locked device.</h4>
+    <h4 class="mt-1 text-lg">If the prompt appears, but the Cancel button doesn't exist, please ensure the device is on the Home screen!</h4>
+    <h4 class="mt-1 text-lg">Also, when the pop-up appears to enter the PIN, just click Cancel!</h4>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-2xl">IMPORTANT! Do not EVER enter the code!</h4>
+    <h4 class="mt-1 text-lg">If you do, you will have to restore the device, and bypass all over again.</h4>
+    <h4 class="mt-1 text-lg">This is for 2 main reasons:</h4>
+    <h4 class="mt-1 text-lg">1, because it corrupts the device and it skips back to the Setup.app, and it's almost impossible to re-bypass</h4>
+    <h4 class="mt-1 text-lg">2, because the device will likely remember the PIN so it won't forget it and always automatically unlock.</h4>
+    <h4 class="mt-1 text-lg">Finishing up in Passra1n, click the green "Locked SIM card is in bypassed iDevice" button in Passra1n.</h4>
+    <h4 class="mt-1 text-lg">Once everything is done, your device is bypassed untethered!</h4>
+    <h4 class="mt-1 text-lg"></h4>
+    <div class="spacer4"></div>
+    <h4 class="mt-1 text-2xl">NOTE: You should probably shut down the device just to make sure the bypass is untethered.</h4>
+    <h4 class="mt-1 text-lg">If the device does anything different such as not activating tethered on the first step, not staying bypassed after a reboot </h4>
+    <h4 class="mt-1 text-lg">or you are unable to install Cydia Substrate, then there was an error while bypassing the device.</h4>
+    <h4 class="mt-1 text-lg">Please contact me with your issue and I will try to help you troubleshoot.</h4>
+    <h4 class="mt-1 text-lg">Enjoy your bypassed device! If you have any questions or suggestions, please send me a DM on <a href="https://instagram.com/finn.desilva">Instagram</a> or <a href="https://twitter.com/AlwaysAppleFTD">X</a>.</h4>
+    <h3 class="mt-7 text-xl font-bold">Hope you enjoy using my software!</h3>
+    <!-- Spacer -->
+    <div class="spacer"></div>
+    <h2 class="mt-5 text-3xl font-bold">Need help?</h2>
+    <h3 class="mt-7 text-xl font-bold">I'm here to help if you need it.</h3>
+    <h3 class="mt-3 text-xl font-bold">I try my best to make Passra1n user-friendly and fix any bugs </p>
+    <p class="mt-3 text-xl font-bold">but feel free to report any problems to me.</p>
+    <div class="spacer4"></div>
+    <a href="mailto:alwaysappleftd@icloud.com?subject=Issue%20with%20Passra1n" class="button2">Contact Always Apple FTD</a>
+   <!-- Spacer -->
+    <div class="spacer"></div>
+  </div>
+    <p>Website made by Always Apple FTD. Please do not copy any part of this website.</p>
+    
+</body>
+</html>
